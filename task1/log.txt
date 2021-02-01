@@ -1,0 +1,11 @@
+commit 6acd49a25945738d21473fe071dfd9ad25f3e230
+Author: igor-shatrov <56680830+igor-shatrov@users.noreply.github.com>
+Date:   Mon Feb 1 22:21:43 2021 +0300
+
+    add status.txt
+
+commit ec0eb1bed92fd960c5c1097b3ea9ba23839f890b
+Author: igor-shatrov <56680830+igor-shatrov@users.noreply.github.com>
+Date:   Mon Feb 1 22:19:14 2021 +0300
+
+    add .gitignore
