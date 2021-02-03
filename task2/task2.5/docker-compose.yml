@@ -1,0 +1,29 @@
+version: '3'
+services: 
+  task2.3:
+    image: dofin/task2.3:latest
+    container_name: task2.3
+    ports:
+      - 8888:80
+  db:
+    image: postgres:11.4-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data/pg_data
+    environment: 
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: task2.5
+      PGDATA: /var/lib/postgresql/data/pg_data
+    restart: always
+  app:
+    image: jenkins/jenkins:lts
+    container_name: app
+    ports: 
+      - 7777:8080
+      - 50000:50000
+    volumes:
+      - ./jenkins:/var/jenkins_home
+    links: 
+      - db
