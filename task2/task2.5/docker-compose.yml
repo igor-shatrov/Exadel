@@ -17,6 +17,11 @@ services:
       POSTGRES_DB: task2.5
       PGDATA: /var/lib/postgresql/data/pg_data
     restart: always
+    healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U postgres"]
+            timeout: 20s
+            retries: 10
+    
   app:
     image: jenkins/jenkins:lts
     container_name: app
@@ -25,5 +30,6 @@ services:
       - 50000:50000
     volumes:
       - ./jenkins:/var/jenkins_home
-    links: 
-      - db
+    depends_on:
+      db:
+        condition: service_healthy
