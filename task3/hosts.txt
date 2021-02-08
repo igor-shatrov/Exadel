@@ -1,0 +1,4 @@
+[clients]
+client1 ansible_host=192.168.98.140
+client2 ansible_host=192.168.98.135
+
