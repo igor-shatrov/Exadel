@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+    mysql:
+        image: mysql
+        container_name: mysql
+        restart: unless-stopped
+        ports: 
+            - "4306:3306"
+        volumes: 
+            - ./mysql:/var/lib/mysql
+        environment: 
+            MYSQL_DATABASE: Exadel
+            MYSQL_ROOT_PASSWORD: 1575
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql

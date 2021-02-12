@@ -1,6 +1,6 @@
 
 ---
-- name: Install nginx
+- name: Install LEMP
   hosts: all
   become: yes
 
@@ -9,5 +9,7 @@
   - name: install nginx
     apt: name=nginx state=latest
 
-  - name: Start nginx and Enabled it on every boot
-    service: name=nginx state=started enabled=yes
+  - name: install mysql-server
+    apt: name=mysql-server state=latest
+
+ 
